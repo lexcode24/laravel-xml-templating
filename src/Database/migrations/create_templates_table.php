@@ -30,6 +30,10 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::table('templates', function (Blueprint $table) {
+            $table->dropForeign('templates_parent_template_id_foreign');
+        });
+        
         Schema::dropIfExists('templates');
     }
 };

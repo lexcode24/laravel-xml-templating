@@ -47,8 +47,8 @@ class XmlTemplatingServiceProvider extends ServiceProvider
             __DIR__.'/../Database/migrations' => database_path('migrations'),
         ], 'migrations');
 
-        // Migrationen laden
-        $this->loadMigrationsFrom(__DIR__.'/../Database/migrations');
+        // Migrationen laden - temporär deaktiviert, um die Reihenfolge zu kontrollieren
+        // $this->loadMigrationsFrom(__DIR__.'/../Database/migrations');
 
         // View-Namespace registrieren
         $this->app['view']->addNamespace('xml-templates', storage_path('framework/views/xml-templates'));
